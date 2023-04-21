@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="CVPRW '23: Parcel3D - Shape Reconstruction from Single RGB Images for Applications in Transportation Logistics"
+    />
+    <meta name="keywords" content="Scrape, Cut, Paste and Learn" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Parcel3D: Shape Reconstruction from Single RGB Images for Applications in
+      Transportation Logistics
+    </title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    />
+    <link rel="stylesheet" href="./static/css/index.css" />
+    <link rel="icon" href="./static/images/favicon.svg" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Parcel3D</h1>
+              <h1 class="title is-2 publication-title">
+                Shape Reconstruction from Single RGB Images for Applications in
+                Transportation Logistics
+              </h1>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://a-nau.github.io">Alexander Naumann</a
+                  ><sup>1,2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.fzi.de/team/felix-hertlein/"
+                    >Felix Hertlein</a
+                  ><sup>1,2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.fzi.de/team/laura-doerr/">Laura Dörr</a
+                  ><sup>1,2</sup>
+                </span>
+                <span class="author-block">
+                  and
+                  <a
+                    href="https://www.ifl.kit.edu/english/staff_kai_furmans.php"
+                  >
+                    Kai Furmans </a
+                  ><sup>1,2</sup>
+                </span>
+              </div>
+
+              <div class="is-size-6 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>&nbsp;FZI Research Center for Information
+                  Technology, Karlsruhe, Germany
+                </span>
+                <br />
+                <span class="author-block">
+                  <sup>2</sup>&nbsp;Karlsruhe Institute of Technology (KIT),
+                  Karlsruhe, Germany
+                </span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <!--                            <span class="link-block">-->
+                  <!--                                <a href="" class="external-link button is-normal is-rounded is-dark">-->
+                  <!--                                  <span class="icon">-->
+                  <!--                                      <i class="fas fa-file-pdf"></i>-->
+                  <!--                                  </span>-->
+                  <!--                                  <span>Paper (tbd)</span>-->
+                  <!--                                </a>-->
+                  <!--                              </span>-->
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2304.08994"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/a-nau/"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code (soon!)</span>
+                    </a>
+                  </span>
+                  <!-- Dataset Link. -->
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="far fa-images"></i>
+                      </span>
+                      <span>Data (soon!)</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                We focus on enabling damage and tampering detection in logistics
+                and tackle the problem of 3D shape reconstruction of potentially
+                damaged parcels. As input we utilize single RGB images, which
+                corresponds to use-cases where only simple handheld devices are
+                available, e.g. for postmen during delivery or clients on
+                delivery.
+              </p>
+              <p>
+                We present a novel synthetic dataset, named Parcel3D, that is
+                based on the Google Scanned Objects (GSO) dataset and consists
+                of more than 13,000 images of parcels with full 3D annotations.
+                The dataset contains intact, i.e. cuboid-shaped, parcels and
+                damaged parcels, which were generated in simulations. We work
+                towards detecting mishandling of parcels by presenting a novel
+                architecture called CubeRefine R-CNN, which combines estimating
+                a 3D bounding box with an iterative mesh refinement.
+              </p>
+              <p>
+                We benchmark our approach on Parcel3D and an existing dataset of
+                cuboid-shaped parcels in real-world scenarios. Our results show,
+                that while training on Parcel3D enables transfer to the real
+                world, enabling reliable deployment in real-world scenarios is
+                still challenging. CubeRefine R-CNN yields competitive
+                performance in terms of Mesh AP and is the only model that
+                directly enables deformation assessment by 3D mesh comparison
+                and tampering detection by comparing viewpoint invariant parcel
+                side surface representations. Dataset and code are available on
+                this website.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br />
+        <!--/ Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">CubeRefine R-CNN</h2>
+            <p>
+              <img src="static/images/overview.jpg" width="80%" />
+              <br />
+              <span style="font-size: small">
+                <b>Figure</b>: We take an RGB image as input and use Cube
+                R-CNN's Cube Head to estimate a 3D bounding box. This bounding
+                box is subdivided and serves as initial mesh, which is refined
+                by an iterative mesh refinement as proposed in. For training and
+                evaluation we present Parcel3D, a novel dataset of normal and
+                damaged parcels with full 3D annotations.
+              </span>
+              <br />
+            </p>
+
+            <br />
+            <br />
+            <h2 class="title is-3">Parcel3D Dataset</h2>
+            <div class="content has-text-justified">
+              We introduce Parcel3D, a novel synthetic dataset of intact and
+              damaged parcel images with full 3D annotations that is suitable
+              for applications in transportation logistics and warehousing.
+              Features are:
+              <ul>
+                <li>over 13,000 images with full 3D annotations</li>
+                <li>
+                  intact parcels based on the
+                  <a
+                    href="https://research.google/resources/datasets/scanned-objects-google-research/"
+                    >Google Scanned Objects</a
+                  >
+                  dataset
+                </li>
+                <li>damaged parcels which were generated in simulations</li>
+                <li>new synthetic cardboard texture dataset</li>
+              </ul>
+            </div>
+            <section class="hero is-light is-small">
+              <div class="hero-body">
+                <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/087bfe0c-8f19-fd19-0b9a-fa917d0a8a08.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/0a4ce3e3-2bac-d62a-1d15-662e963e1aab.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/0e30ed58-3421-40b4-2d22-d7bb9b4738f5.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/2ebb4e51-5050-275a-5adf-61608e899501.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/44a39511-223c-141d-b91d-aa9a34595861.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/8adb6474-ef34-2eb7-88bf-aedd34f52dfe.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/a5df213a-3a02-6f95-cd6b-4d70f380d997.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/be197e9c-0fb8-e77a-eb0c-76530c301005.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/d56c2153-736a-1118-09d1-e7ef48de0dd4.jpg"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/jpg/eacd98e0-a0d8-25bb-1636-48dee06554cf.jpg"
+                      />
+                    </div>
+                  </div>
+                  Randomly sampled images from Parcel3D.
+                </div>
+              </div>
+              <div class="hero-body">
+                <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/00a9b839-cf46-966d-d3b5-442909cdc21e.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/06ba2fc8-5c98-61af-f556-defada685c08.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/1abe49d9-007c-3b45-400e-82c52e75f62d.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/1d172403-1685-a399-21e4-44edb23f63ca.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/3be3a51d-812b-85e3-564a-b76758d92453.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/3e84aaf8-67bb-9ef7-351f-579e18ffac76.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/4dd7e7a8-3d0c-6c69-b03e-04f6a21ef50f.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/5a194602-d267-1bb0-7893-c4e985ddde08.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/5aef28b8-d2b2-3f4e-3928-428e8db02efe.gif"
+                      />
+                    </div>
+                    <div class="item">
+                      <img
+                        src="static/images/parcel3d/5b9194e0-f618-05d7-39d7-283ec0ac1a7a.gif"
+                      />
+                    </div>
+                  </div>
+                  Randomly sampled impressions showing the input image, the 2D
+                  annotations and the overlayed 3D mesh. Note, that quality is
+                  quite low due to conversion to GIF.
+                </div>
+              </div>
+              <div class="hero-body">
+                <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0007.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0009.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0013.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0032.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0035.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0040.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0043.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0080.png" />
+                    </div>
+                    <div class="item">
+                      <img src="static/images/cardboard/texture_0092.png" />
+                    </div>
+                  </div>
+                  Randomly sampled images from the cardboard dataset.
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="column is-centered"></div>
+      </div>
+      <footer class="footer">
+        <div class="container">
+          <div class="content has-text-centered">
+            <a
+              class="icon-link"
+              href="https://arxiv.org/abs/2304.08994"
+              class="external-link"
+              disabled
+            >
+              <i class="fas fa-file-pdf"></i>
+            </a>
+            <a class="icon-link" href="" class="external-link" disabled>
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+          <div class="columns is-centered">
+            <div class="column is-8">
+              <div class="content">
+                <p style="text-align: center">
+                  This website template is borrowed from
+                  <a href="https://github.com/nerfies/nerfies.github.io"
+                    >https://nerfies.github.io</a
+                  >
+                </p>
+                <p style="text-align: center">© Alexander Naumann, 2023</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </body>
+</html>
