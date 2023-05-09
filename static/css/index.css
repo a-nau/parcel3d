@@ -24,7 +24,7 @@ body {
 }
 
 .teaser {
-  font-family: 'Google Sans', sans-serif;
+  font-family: 'Metropolis', sans-serif;
 }
 
 
@@ -48,11 +48,11 @@ body {
 }
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Metropolis', sans-serif;
 }
 
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+    font-family: 'Metropolis', sans-serif;
 }
 
 .publication-venue {
@@ -344,4 +344,23 @@ body {
 
 .demo-gallery.dark > ul > li a {
     border: 3px solid #04070a;
+}
+
+/* own css*/
+
+.item {
+  position: relative;
+}
+
+.item-caption-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.item-caption {
+  background-color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
 }
