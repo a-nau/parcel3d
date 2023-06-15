@@ -11,11 +11,12 @@ If you use the code of our paper for scientific research, please consider citing
 
 ```latex
 @inproceedings{naumannParcel3DShapeReconstruction2023,
-	title        = {Parcel3D: Shape Reconstruction from Single RGB Images for Applications in Transportation Logistics},
-	author       = {Naumann, Alexander and Hertlein, Felix and Dörr, Laura and Furmans, Kai},
-	booktitle    = {IEEE/CVF Conference on Computer Vision and Pattern Recognition Workshops ({CVPRW})},
-	note         = {to appear in},
-	date         = 2023
+    author    = {Naumann, Alexander and Hertlein, Felix and D\"orr, Laura and Furmans, Kai},
+    title     = {Parcel3D: Shape Reconstruction From Single RGB Images for Applications in Transportation Logistics},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+    month     = {June},
+    year      = {2023},
+    pages     = {4402-4412}
 }
 ```
 
